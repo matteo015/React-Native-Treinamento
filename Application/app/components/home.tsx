@@ -1,11 +1,11 @@
-import {Image, ScrollView, StyleSheet, TouchableOpacity, View} from "react-native";
+import {FlatList, Image, ScrollView, StyleSheet, TouchableOpacity, View} from "react-native";
 import Menu from "./menu";
 import styles from "./styles";
-
+import Card from "./card";
 import PrimeLogo from "@/assets/images/prime_video.png"
 import AmazonLogo from "@/assets/images/amazon_logo.png"
 
-import Movie1 from "@/assets/movies/american.png"
+import { MOVIESCRIME } from "@/utils/enum_movies";
 export default function Home(){
     return(
         <View style={styles.header_container}>
@@ -20,12 +20,20 @@ export default function Home(){
                 <Menu menu="Kids"/>
             </View>
             <ScrollView>
-                <TouchableOpacity>
-                    <Image source={Movie1}></Image>
+                <TouchableOpacity style={styles.nav_image}>
                 </TouchableOpacity>
                 <Menu menu="Continue Watching"/>
                 <Menu menu="Crime Movies"/>
                 <Menu menu="Watch in your language"/>
+                <FlatList
+                        data={MOVIESCRIME}
+                        keyExtractor={(item:any) => item.id}
+                        renderItem={({item}) => (
+                            <Card
+                                imageUrl={item.img_url}
+                            />
+                        )}
+                    />
             </ScrollView>
         </View>
     )

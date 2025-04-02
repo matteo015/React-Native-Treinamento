@@ -27,5 +27,11 @@ export default StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'space-around',
+  },
+
+  nav_image: {
+    flex: 1,
+    flexDirection: 'row',
+    flexShrink: 1,
   }
 });
