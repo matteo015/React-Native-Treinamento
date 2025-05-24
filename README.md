@@ -1,2 +1,2 @@
-# TINFEM - 1 SEMESTRE: REACT NATIVE (IFOOD)
-- O projeto ira incluir todas as depedencias necessárias para rodar.
+#SCHOOL ACTIVITY: IFOOD MOBILE APP CLONE
+- All dependencies included to run.
